@@ -1,24 +1,5 @@
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: "jdbc:postgresql://localhost:5432/micro_school_db"
-    username: "postgres"
-    password: "kyawe"
   application:
-    name: School
-  jpa:
-    hibernate:
-      ddl-auto: create
+    name: school
   config:
     import: optional:configserver:http://localhost:8888
-
-
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-server:
-  port: 8070
