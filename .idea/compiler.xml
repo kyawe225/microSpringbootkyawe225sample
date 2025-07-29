@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
+      <module name="config-server.main" options="-parameters" />
+      <module name="config-server.test" options="-parameters" />
+      <module name="discovery" options="-parameters" />
+      <module name="discovery.main" options="-parameters" />
+      <module name="discovery.test" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="gateway.main" options="-parameters" />
+      <module name="gateway.test" options="-parameters" />
+      <module name="school" options="-parameters" />
+      <module name="school.main" options="-parameters" />
+      <module name="school.test" options="-parameters" />
+      <module name="student" options="-parameters" />
+      <module name="student.main" options="-parameters" />
+      <module name="student.test" options="-parameters" />
+    </option>
+  </component>
+</project>
