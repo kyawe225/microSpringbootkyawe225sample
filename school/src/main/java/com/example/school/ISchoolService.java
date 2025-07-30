@@ -8,6 +8,6 @@ public interface ISchoolService {
     boolean update(School s);
     boolean delete(int id);
     Iterable<School> all();
-    School getDetail(int id);
+    SchoolModel getDetail(int id);
     boolean saveAll(List<School> s);
 }

@@ -78,6 +78,10 @@ public class StudentService implements IStudentService {
             return false;
         }
     }
+
+    public Iterable<Student> schoolRelatedStudents(int schoolId) {
+        return repository.findBySchoolId(schoolId);
+    }
     // just add crud code ....... and fuck those shits
 
 }

@@ -42,7 +42,7 @@ public class HomeController {
     }
 
     @GetMapping("/api/v1/schools/"+"{id}")
-    public ResponseEntity<School> getDetail(@PathVariable int id) {
+    public ResponseEntity<SchoolModel> getDetail(@PathVariable int id) {
         return ResponseEntity.ok(service.getDetail(id));
     }
 }

@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.school.service.QueueMessageProducer;
+
 import java.util.List;
 
 @Service
@@ -13,6 +15,10 @@ public class SchoolService implements ISchoolService {
 
     @Autowired
     SchoolRepository repository;
+
+    @Autowired
+    QueueMessageProducer producer;
+
     Logger logger = LoggerFactory.getLogger(SchoolService.class);
 
 
@@ -60,10 +66,12 @@ public class SchoolService implements ISchoolService {
     }
 
     @Override
-    public School getDetail(int s) {
+    public SchoolModel getDetail(int s) {
         try {
             School school = repository.findById(s).get();
-            return school;
+            var sc = new SchoolModel(school);
+            sc.students = producer.getSchoolRelatedStudents("getSchoolRelatedStudent",school.Id.toString());
+            return sc;
         } catch (Exception e) {
             logger.error(e.getMessage());
             return null;

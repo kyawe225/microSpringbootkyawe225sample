@@ -10,16 +10,21 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
 @Data
 @Getter
 @Setter
 @NoArgsConstructor
-public class School {
-    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SchoolModel {
     public Integer Id;
     public String Name;
     public String Description;
     public LocalDateTime PublicationDate;
+    public List<StudentModel> students;
+
+    public SchoolModel(School school) {
+        this.Id = school.Id;
+        this.Name = school.Name;
+        this.Description = school.Description;
+        this.PublicationDate = school.PublicationDate;
+    }
 }

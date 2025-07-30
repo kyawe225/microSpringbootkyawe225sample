@@ -1,11 +1,11 @@
 package com.example.student;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -17,5 +17,14 @@ public class Student {
     private Integer Id;
     private String Name;
     private String Email;
-    private LocalDateTime Dob;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
+    private OffsetDateTime Dob;
+    private Integer schoolId;
+
+    public Integer getSchoolId() {
+        return schoolId;
+    }
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
+    }
 }

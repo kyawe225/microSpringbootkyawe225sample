@@ -10,4 +10,5 @@ public interface IStudentService {
     Iterable<Student> all();
     Student getDetail(int id);
     boolean saveAll(List<Student> s);
+    Iterable<Student> schoolRelatedStudents(int schoolId);
 }

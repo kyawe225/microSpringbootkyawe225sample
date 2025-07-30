@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RestController
 public class HomeController {
     @Autowired
-    IStudentService service;
+    StudentService service;
 
     @GetMapping("hello-world")
     public String home() {
