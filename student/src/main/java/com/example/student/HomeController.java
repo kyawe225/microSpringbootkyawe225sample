@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
@@ -29,12 +28,12 @@ public class HomeController {
     }
 
     @PutMapping("/api/v1/students/"+"{id}")
-    public ResponseEntity<Boolean> update(@RequestBody Student s) {
+    public ResponseEntity<Boolean> update(@PathVariable("id") int id,@RequestBody Student s) {
         return ResponseEntity.ok(service.update(s));
     }
 
     @DeleteMapping("/api/v1/students/"+"{id}")
-    public ResponseEntity<Boolean> delete(@PathVariable int id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") int id) {
         return ResponseEntity.ok(service.delete(id));
     }
 
@@ -49,7 +48,7 @@ public class HomeController {
     }
 
     @GetMapping("/api/v1/students/"+"{id}")
-    public ResponseEntity<Student> getDetail(@PathVariable int id) {
+    public ResponseEntity<Student> getDetail(@PathVariable("id") int id) {
         return ResponseEntity.ok(service.getDetail(id));
     }
 }

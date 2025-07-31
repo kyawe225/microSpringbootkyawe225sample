@@ -1,11 +1,11 @@
 package com.example.school;
 
+import java.time.OffsetDateTime;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 @Data
 @NoArgsConstructor

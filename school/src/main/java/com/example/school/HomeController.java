@@ -22,12 +22,12 @@ public class HomeController {
     }
 
     @PutMapping("/api/v1/schools/"+"{id}")
-    public ResponseEntity<Boolean> update(@RequestBody School s) {
+    public ResponseEntity<Boolean> update(@PathVariable("id") int id,@RequestBody School s) {
         return ResponseEntity.ok(service.update(s));
     }
 
     @DeleteMapping("/api/v1/schools/"+"{id}")
-    public ResponseEntity<Boolean> delete(@PathVariable int id) {
+    public ResponseEntity<Boolean> delete(@PathVariable("id") int id) {
         return ResponseEntity.ok(service.delete(id));
     }
 
@@ -42,7 +42,7 @@ public class HomeController {
     }
 
     @GetMapping("/api/v1/schools/"+"{id}")
-    public ResponseEntity<SchoolModel> getDetail(@PathVariable int id) {
+    public ResponseEntity<SchoolModel> getDetail(@PathVariable("id") int id) {
         return ResponseEntity.ok(service.getDetail(id));
     }
 }
